@@ -38,3 +38,28 @@ class Figure:
 
     def rotate(self):
         self.rotation = (self.rotation + 1) % len(self.figure[self.type])
+        
+class Tetris:
+    lvl = 2
+    schet = 0
+    statement = "start"
+    pole = []
+    h = 0
+    a = 0
+    x = 100
+    y = 60
+    zoom = 21
+    figure = None
+    def __init__(self, h, a):
+        self.h = h
+        self.a = a
+        self.pole = []
+        self.schet = 0
+        self.statement = "start"
+        for i in range(h):
+        new_line = []
+        for j in range(a):
+        new_line.append(0)
+        self.pole.append(new_line)
+    def new_figure(self):
+        self.figure = Figure(3, 0)
